@@ -1,0 +1,8 @@
+#spring.application.name=FirstSever
+spring:
+  application:
+    name: FirstSever
+  datasource:
+    url: jdbc:mariadb://localhost/board
+    username: root
+    password: green502
