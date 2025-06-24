@@ -3,6 +3,11 @@ spring:
   application:
     name: FirstSever
   datasource:
-    url: jdbc:mariadb://localhost/board
+    url: jdbc:mariadb://localhost/memo
     username: root
     password: green502
+
+
+
+mybatis:
+  mapper-locations: mappers/**/*.xml

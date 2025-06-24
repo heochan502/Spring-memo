@@ -1,14 +1,13 @@
 package com.green.firstsever.model;
 
+
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-@Setter
 @Getter
-@ToString
-public class MemoPostReq {
+@Setter
+public class MemoGetOneRes {
     private String title;
     private String content;
-
+    private String createdAt;
 }
