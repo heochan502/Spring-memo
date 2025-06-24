@@ -46,6 +46,7 @@ public class MemoController
     public String postMemo(@RequestBody MemoPostReq req) //@RequestBody는 json데이터를 받을거야.
     {
         System.out.println( "Post Memo: " + req);
+
         int result = memoService.insMemo(req);
         return result == 1 ? "성공":"실패";
     }
