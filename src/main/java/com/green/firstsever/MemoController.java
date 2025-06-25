@@ -12,12 +12,13 @@ import java.util.List;
 
 //RestController는 백엔드에서 데이터만 가지고올꺼니까
 //백엔드에서 화면 그리면  Controller 쓰면됨
-@RestController //빈(Bean)등록, 스프링컨테이너 객체 생성을 대리로 맡긴다. 요청 / 응답자
-@RequiredArgsConstructor // 자동으로 생성자를 만들어주는것
+@RestController //빈(Bean)등록, 스프링컨테이너 객체 생성을 대리로 맡긴다. 요청 / 응답자 둘다된다
+@RequiredArgsConstructor //final만 붇은애만 해준다 롬복 에노테이션 자동으로 생성자를 만들어주는것
 public class MemoController
 {
     private final MemoService memoService;
-
+// 외부에서 만든 주소 객체를 주입 하는게 DI 임
+    // 다이렉트 인젝션
     //DI 받는 방법 3가지
     // 1. 필드 주입
     // 2. setter 주입( 메소드 주입)
