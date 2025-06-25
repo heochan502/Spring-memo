@@ -1,9 +1,7 @@
 package com.green.firstsever;
 
 
-import com.green.firstsever.model.MemoGetOneRes;
-import com.green.firstsever.model.MemoGetRes;
-import com.green.firstsever.model.MemoPostReq;
+import com.green.firstsever.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +35,7 @@ public class MemoController
         return memoService.selMemoList();
     }
 // 특정 게시글의 글내용 및 댓글 리스트
+    // 경로 방식을 왜적었냐 뒤 아래 둘다 get을 쓰고잇어서 명확하게 할려고
     @GetMapping("/memo/{id}")
     public MemoGetOneRes getMemo(@PathVariable int id){
         System.out.println( "getMemo: " + id);
@@ -50,6 +49,19 @@ public class MemoController
 
         int result = memoService.insMemo(req);
         return result == 1 ? "성공":"실패";
+    }
+
+    @PutMapping("/memo")
+    public String putMemo(@RequestBody MemoPutReq req) {
+        System.out.println("postMemo: " + req);
+        int result = memoService.updMemo(req);
+        return result == 1 ? "성공" : "실패";
+    }
+    @DeleteMapping("/memo")
+    public String deleteMemo(@RequestParam int id) {
+        System.out.println("deleteMemo: " + id);
+        int result = memoService.delMemo(id);
+        return result == 1 ? "성공" : "실패";
     }
 
 

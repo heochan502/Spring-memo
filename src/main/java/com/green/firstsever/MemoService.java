@@ -4,6 +4,7 @@ package com.green.firstsever;
 import com.green.firstsever.model.MemoGetOneRes;
 import com.green.firstsever.model.MemoGetRes;
 import com.green.firstsever.model.MemoPostReq;
+import com.green.firstsever.model.MemoPutReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,10 +26,18 @@ public class MemoService  {
     }
 
     public List<MemoGetRes> selMemoList() {
+
         return memoMapper.selMemoList();
     }
 
     public MemoGetOneRes selMemo(int id) {
         return memoMapper.selMemo(id);
+    }
+
+    public int updMemo(MemoPutReq req) {
+        return memoMapper.updMemo(req);
+    }
+    public int delMemo(int id) {
+        return memoMapper.delMemo(id);
     }
 }

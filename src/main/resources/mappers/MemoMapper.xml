@@ -23,6 +23,18 @@
         FROM memo
         WHERE id= #{id}
   </select>
+
+  <!--수정 하고 싶어요. id / title / content -->
+    <update id="updMemo">
+        UPDATE memo
+        SET title = #{title}
+        , content = #{content}
+        WHERE id = #{id}
+    </update>
+    <delete id="delMemo">
+        DELETE FROM memo
+        where id = #{id}
+    </delete>
 </mapper>
 
 

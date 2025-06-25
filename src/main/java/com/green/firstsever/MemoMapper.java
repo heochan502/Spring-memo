@@ -4,6 +4,7 @@ package com.green.firstsever;
 import com.green.firstsever.model.MemoGetOneRes;
 import com.green.firstsever.model.MemoGetRes;
 import com.green.firstsever.model.MemoPostReq;
+import com.green.firstsever.model.MemoPutReq;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -23,4 +24,7 @@ public interface MemoMapper {
     List<MemoGetRes> selMemoList();
     // 이러고 service에서 리턴값 설정함
     MemoGetOneRes selMemo(int id);
+    // 튜플이 몇개 들어갔구나 라고 몇개의 행이라고 리턴해서 숫자형으로 돌아옴
+    int updMemo(MemoPutReq req);
+    int delMemo(int id);
 }
